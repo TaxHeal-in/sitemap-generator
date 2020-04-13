@@ -18,7 +18,8 @@ def _divideList(listData, listSize):
 		yield listData[index:index + listSize]
 
 def _loadAPI():
-	response = requests.get("https://taxheal.in/chartered-accountants/mrn.php")
+	apiURL = ""
+	response = requests.get(apiURL)
 	if response.status_code != 200:
 	    raise ApiError("GET /tasks/ {}".format(response.status_code))
 	allMRNList = response.json()["data"]
